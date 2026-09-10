@@ -1,0 +1,41 @@
+[project]
+name = "pi-deepwiki-cli"
+version = "0.1.0"
+description = "Agent-friendly DeepWiki CLI for any GitHub repo — aligned to how the Pi coding agent uses CLIs"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Vanja Bunjevac" }]
+keywords = ["deepwiki", "pi", "coding-agent", "cli", "documentation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = ["click>=8.1.0", "httpx>=0.27.0"]
+
+[project.urls]
+Homepage = "https://github.com/vanja-emichi/pi_deepwiki_cli"
+Repository = "https://github.com/vanja-emichi/pi_deepwiki_cli"
+Issues = "https://github.com/vanja-emichi/pi_deepwiki_cli/issues"
+
+[project.scripts]
+pi-deepwiki = "pi_deepwiki_cli.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pi_deepwiki_cli"]
+
+[dependency-groups]
+dev = ["pytest>=8.0.0"]
